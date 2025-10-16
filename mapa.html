@@ -1,52 +1,42 @@
 <!doctype html>
 <html lang="pt-BR">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Estacionamento - Monitoramento em Tempo Real</title>
-  <link rel="manifest" href="/manifest.json" />
-  <link rel="stylesheet" href="CSS/mapa.css" />
-  
-  
-  
-  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
-  <meta name="theme-color" content="#0b5" />
-</head>
-<body>
-  <header>
-    <h1>Gerenciador de Vagas — Estacionamento</h1>
-    <div class="header-actions">
-      <span id="userEmail"></span>
-      <button id="logoutBtn">Sair</button>
-    </div>
-  </header>
- 
-  <main>
-    <section class="summary">
-      <div class="counter">Livres: <span id="livre">0</span></div>
-      <div class="counter">Ocupadas: <span id="ocupada">0</span></div>
-      <div class="counter">Reservadas: <span id="reservada">0</span></div>
-    </section>
- 
-    <section id="mapa" class="parking-map" aria-label="Mapa do estacionamento">
-      
-    </section>
-  </main>
- 
-  <footer>
-    <small>Desenvolvido com HTML/CSS/JS + Firebase</small>
-  </footer>
- 
-  <script src="scripts.js"></script>
-  <script src="app.js"></script>
-  <script>
-   
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/service-worker.js')
-        .catch(e => console.warn('SW registration falhou:', e));
-    }
-  </script>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Estacionamento — Painel</title>
+    <link rel="manifest" href="manifest.json" />
+    <link rel="stylesheet" href="CSS/mapa.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Painel do Estacionamento</h1>
+      <div class="header-actions">
+        <div id="contadores">
+          <span id="livres">Livres: 0</span>
+          <span id="ocupadas">Ocupadas: 0</span>
+          <span id="reservadas">Reservadas: 0</span>
+        </div>
+        <div>
+          <button id="btn-logout">Sair</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="estacionamento-container">
+        
+        <div id="mapa-vagas" class="mapa-vagas" aria-label="Mapa do estacionamento"></div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Operador conectado: <span id="usuario-email">—</span></p>
+    </footer>
+
+    <script src="firebase-config.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.24.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.24.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.24.0/firebase-database-compat.js"></script>
+    <script src="script/script.js"></script>
+  </body>
 </html>

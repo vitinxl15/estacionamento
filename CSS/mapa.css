@@ -1,106 +1,161 @@
 :root {
-  --bg: #d1f6ff;
-  --card: #ffffff;
-  --accent: #3b82f6;
-  --accent-hover: #2563eb;
-  --success: #93c5fd;
-  --danger: #ef4444;
-  --warning: #facc15;
-  --text: #1e293b;
-  --muted: #64748b;
+  --cor-fundo: #f3f4f6;
+  --cor-principal: #007a75;
+  --cor-secundaria: #00b8b1;
+  --cor-texto: #2c3e50;
+  --cor-livre: #4caf50;
+  --cor-ocupada: #e74c3c;
+  --cor-reservada: #f1c40f;
+  --cor-header: #007a75;
+  --cor-header-texto: #fff;
+  --cor-botao-hover: #005e5a;
   --radius: 10px;
-  --shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  --gap: 16px;
-  font-family: "Inter", system-ui, sans-serif;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  --shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  --transicao: 0.3s ease;
+  font-family: "Poppins", sans-serif;
 }
 
 body {
-  background-color: var(--bg);
-  color: var(--text);
-  min-height: 100vh;
+  margin: 0;
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
+}
+
+h1 {
+  margin: 0;
 }
 
 header {
-  background-color: var(--card);
-  padding: 20px 24px;
+  background: var(--cor-header);
+  color: var(--cor-header-texto);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #e2e8f0;
+  padding: 1.2rem 2rem;
+  flex-wrap: wrap;
   box-shadow: var(--shadow);
-}
-
-header h1 {
-  font-size: 1.4rem;
-  font-weight: 600;
-  color: var(--text);
 }
 
 .header-actions {
   display: flex;
+  gap: 2rem;
   align-items: center;
-  gap: 12px;
 }
 
-#userEmail {
-  font-size: 0.95rem;
-  color: var(--muted);
-}
-
-#logoutBtn {
-  padding: 8px 16px;
-  background-color: var(--accent);
-  color: white;
-  border: none;
-  border-radius: var(--radius);
-  cursor: pointer;
-  transition: background-color 0.2s ease;
+#contadores {
+  display: flex;
+  gap: 1.5rem;
   font-weight: 500;
 }
 
-#logoutBtn:hover {
-  background-color: var(--accent-hover);
+#contadores span {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius);
+  transition: var(--transicao);
+}
+
+#contadores span:hover {
+  background: rgba(255, 255, 255, 0.35);
+}
+
+#btn-logout {
+  background: #fff;
+  color: var(--cor-header);
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transicao);
+}
+
+#btn-logout:hover {
+  background: var(--cor-botao-hover);
+  color: #fff;
 }
 
 main {
-  padding: 24px;
   flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  max-width: 1200px;
-  margin: 0 auto;
-  width: 100%;
-}
-
-.summary {
+  padding: 2rem;
   display: flex;
   justify-content: center;
-  gap: 16px;
-  flex-wrap: wrap;
+  align-items: flex-start;
 }
 
-.counter {
-  background-color: var(--card);
-  padding: 14px 24px;
+.estacionamento-container {
+  width: 100%;
+  max-width: 1000px;
+  background: #fff;
   border-radius: var(--radius);
+  padding: 2rem;
   box-shadow: var(--shadow);
-  font-size: 1rem;
-  font-weight: 500;
-  color: var(--text);
-  min-width: 120px;
-  text-align: center;
 }
 
-.counter span {
-  font-weight: bold;
-  color: var(--accent);
+.mapa-vagas {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+  gap: 1rem;
+  justify-items: center;
+  margin-top: 1rem;
+}
+
+.vaga {
+  width: 90px;
+  height: 90px;
+  border-radius: var(--radius);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.vaga:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.vaga.livre {
+  background-color: var(--cor-livre);
+}
+
+.vaga.ocupada {
+  background-color: var(--cor-ocupada);
+}
+
+.vaga.reservada {
+  background-color: var(--cor-reservada);
+  color: #000;
+}
+
+footer {
+  background: var(--cor-header);
+  color: var(--cor-header-texto);
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 700px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  #contadores {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .mapa-vagas {
+    grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+  }
 }
