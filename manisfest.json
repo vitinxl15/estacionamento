@@ -1,14 +1,14 @@
-{
+
+  {
   "background_color": "#ffffff",
   "dir": "ltr",
   "display": "standalone",
   "name": "vitinxl15.github",
   "orientation": "any",
   "scope": "/",
-  "short_name": "Estacionamento",
+  "short_name": "vitinxl15.github",
   "start_url": "/https://vitinxl15.github.io/estacionamento/",
   "theme_color": "#ffffff",
-  "lang": "pt",
   "icons": [
     {
       "src": "windows11/SmallTile.scale-100.png",
