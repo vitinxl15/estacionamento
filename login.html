@@ -1,35 +1,24 @@
-<!doctype html>
-<html lang="pt-BR">
+<!DOCTYPE html>
+<html lang="pt-br">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Login Operador — Estacionamento</title>
-  <link rel="stylesheet" href="CSS/style.css">
-  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <link rel="stylesheet" href="CSS/login.css">
+  <link rel="manifest" href="manifest.json">
 </head>
-<body class="login-page">
-  <main class="login-container">
-    <h1>Login do Operador</h1>
-
+<body>
+  <div class="container">
+    <h1>Login</h1>
     <form id="loginForm">
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" required>
+  <input type="email" id="email" name="email" placeholder="Email" required />
+  <input type="password" id="senha" name="senha" placeholder="Senha" required />
+  <button type="submit">Entrar</button>
+</form>
 
-      <label for="password">Senha</label>
-      <input type="password" id="password" name="password" required minlength="6">
+    <p>Não tem conta? <a href="cadastro.html">Cadastrar</a></p>
+    <p id="mensagem"></p>
+  </div>
 
-      <div class="row">
-        <button type="submit">Entrar</button>
-        <button type="button" id="registerBtn">Registrar novo</button>
-      </div>
-    </form>
-
-    <div id="message"></div>
-  </main>
-
-  <script src="script/script.js"></script>
-  <script src="firebase-config.js"></script>
-  
+  <script type="module" src="script/login.js"></script>
 </body>
 </html>

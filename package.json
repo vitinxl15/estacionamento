@@ -1,0 +1,23 @@
+{
+  "name": "estacionamento",
+  "version": "1.0.0",
+  "description": "",
+  "main": "firebase-config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vitinxl15/estacionamento.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vitinxl15/estacionamento/issues"
+  },
+  "homepage": "https://github.com/vitinxl15/estacionamento#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}

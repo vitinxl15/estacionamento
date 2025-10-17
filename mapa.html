@@ -1,42 +1,41 @@
-<!doctype html>
-<html lang="pt-BR">
+<!DOCTYPE html>
+<html lang="pt-br">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Estacionamento — Painel</title>
-    <link rel="manifest" href="manifest.json" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="CSS/mapa.css" />
+    <link rel="manifest" href="manifest.json">
+    <title>Estacionamento</title>
   </head>
+
   <body>
-    <header>
-      <h1>Painel do Estacionamento</h1>
-      <div class="header-actions">
-        <div id="contadores">
-          <span id="livres">Livres: 0</span>
-          <span id="ocupadas">Ocupadas: 0</span>
-          <span id="reservadas">Reservadas: 0</span>
-        </div>
-        <div>
-          <button id="btn-logout">Sair</button>
-        </div>
-      </div>
+    <header id ="header">
+      <h2>Controle de Estacionamento</h2>
     </header>
 
     <main>
-      <section class="estacionamento-container">
+      <section>
+        <div>
+          <h1>Estacionamento</h1>
+        </div>
+
         
-        <div id="mapa-vagas" class="mapa-vagas" aria-label="Mapa do estacionamento"></div>
+        <div class="vagas" id="vagasContainer"></div>
+
+        
+        <ul class="legendas">
+          <li><span class="cor livre"></span> Livre</li>
+          <li><span class="cor reservada"></span> Reservada</li>
+          <li><span class="cor ocupada"></span> Ocupada</li>
+        </ul>
       </section>
     </main>
 
     <footer>
-      <p>Operador conectado: <span id="usuario-email">—</span></p>
+      <p>estacionamento &copy; 2023</p>
     </footer>
 
-    <script src="firebase-config.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.24.0/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.24.0/firebase-auth-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.24.0/firebase-database-compat.js"></script>
-    <script src="script/script.js"></script>
+    <script type="module" src="script/script.js"></script>
   </body>
 </html>
