@@ -3,7 +3,7 @@ import { getAuth } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-auth
 import { getFirestore } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-firestore.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-analytics.js";
 
-const firebaseConfig = {
+  const firebaseConfig = {
     apiKey: "AIzaSyC5UJkACqGiVuBbKX23bdKu-T5bbHJZTxc",
     authDomain: "estacionamento-ecf23.firebaseapp.com",
     databaseURL: "https://estacionamento-ecf23-default-rtdb.firebaseio.com",
