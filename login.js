@@ -11,7 +11,7 @@ loginForm.addEventListener("submit", async (e) => {
 
   try {
     await signInWithEmailAndPassword(auth, email, senha);
-    window.location.href = "mapa.html";
+    window.location.href = "index.html";
   } catch (error) {
     alert("Erro ao fazer login: " + error.message);
   }
